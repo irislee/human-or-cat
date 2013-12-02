@@ -1,6 +1,10 @@
 <h1>Human or Cat</h1>
 
-<h3> Play sound: <%= @sound.file_name %></h3>
+
+<audio controls>
+  <source src="assets/<%= @sound.file_name %>" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio><br>
 
 <%= hidden_field_tag 'sound_type', @sound.sound_type %>
 <%= image_tag @image1.file_name, width: '200', class: 'js-img', id: 'human' %>
