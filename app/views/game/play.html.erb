@@ -2,6 +2,10 @@
 
 <h3> Play sound: <%= @sound.file_name %></h3>
 
-<%= hidden_field_tag 'sound_type', @sound.cat %>
-<%= image_tag @image1.file_name, width: '200', class: 'js-img' %>
-<%= image_tag @image2.file_name, width: '200', class: 'js-img' %>
+<%= hidden_field_tag 'sound_type', @sound.sound_type %>
+<%= image_tag @image1.file_name, width: '200', class: 'js-img', id: 'human' %>
+<%= image_tag @image2.file_name, width: '200', class: 'js-img', id: 'cat' %>
+
+<div id="result"></div>
+
+<a href="/" id="again" style="display:none">Play Again</a>
