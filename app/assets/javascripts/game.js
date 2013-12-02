@@ -2,14 +2,27 @@ scorer = function(element){
   var hidden_field = $("#sound_type").attr("value");
   var guess = $(element).attr("id");
   if (hidden_field === guess){
-    show_results("You Win");
+    show_results(true);
   }
   else {
-    show_results("You Lose");
+    show_results(false);
   }
 };
 
-show_results = function(message){
+show_results = function(won){
+  if (won){
+   var message = "You Won"; 
+   var condition = "right";
+  }
+  else {
+    var message = "You Lose";
+    var condition = "wrong";
+  }
+
+  $.get( "score/" + condition, function( data ) {
+    $("#score").html(data.correct_answers + "/" + data.games_played);
+  });
+
   $("#result").html(message);
   $("#again").show();
 };

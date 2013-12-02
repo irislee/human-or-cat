@@ -1,5 +1,4 @@
-<h1>Human or Cat</h1>
-
+<h1>Human or Cat?</h1>
 
 <audio controls>
   <source src="assets/<%= @sound.file_name %>" type="audio/mpeg">
@@ -13,3 +12,5 @@ Your browser does not support the audio element.
 <div id="result"></div>
 
 <a href="/" id="again" style="display:none">Play Again</a>
+
+<div>Score: <span id="score"><%= @score %></span></div>
