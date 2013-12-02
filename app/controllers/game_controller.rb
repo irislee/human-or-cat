@@ -1,8 +1,8 @@
 class GameController < ApplicationController
   def play
     @sound = Meow.order("RANDOM()").first
-    # @image1 = '/human1.jpg'
-    # @image2 = cat
+    @image1 = 'human1.jpg'
+    @image2 = 'cat1.jpg'
   end
 end
 
