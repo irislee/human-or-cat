@@ -8,3 +8,6 @@
 
 Meow.create(file_name: 'meow1.mp3', cat: true)
 Meow.create(file_name: 'meow2.mp3', cat: true)
+
+Image.create(file_name: 'cat1.jpg', cat: true)
+Image.create(file_name: 'human1.jpg', cat: false)
