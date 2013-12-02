@@ -1,4 +1,5 @@
 scorer = function(element){
+  $( ".js-img" ).off("click");
   var hidden_field = $("#sound_type").attr("value");
   var guess = $(element).attr("id");
   if (hidden_field === guess){
@@ -11,11 +12,11 @@ scorer = function(element){
 
 show_results = function(won){
   if (won){
-   var message = "You Won"; 
+   var message = "Right"; 
    var condition = "right";
   }
   else {
-    var message = "You Lose";
+    var message = "Wrong";
     var condition = "wrong";
   }
 
