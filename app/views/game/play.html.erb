@@ -1,5 +1,7 @@
 <h1>Human or Cat</h1>
 
-<h3> Play sound: <%= @sound %></h3>
-<%= image_tag(@image1, width: '200') %>
-<%= image_tag(@image2, width: '200') %>
+<h3> Play sound: <%= @sound.file_name %></h3>
+
+<%= hidden_field_tag 'sound_type', @sound.cat %>
+<%= image_tag @image1.file_name, width: '200', class: 'js-img' %>
+<%= image_tag @image2.file_name, width: '200', class: 'js-img' %>
