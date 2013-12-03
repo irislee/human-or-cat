@@ -19,11 +19,17 @@ show_results = function(won){
     var message = "You got it wrong.";
     var condition = "wrong";
   }
-
+  
   $.get( "score/" + condition, function( data ) {
-    $("#score").html(data.correct_answers + "/" + data.games_played);
+    var score = data.correct_answers + "/" + data.games_played;
+    $("#score").html(score);
+    $("#twit").html('<a href="https://twitter.com/intent/tweet?text=I%20scored%20' + score + '%20on" data-hashtags="HumanOrCat" data-lang="en" class="twitter-share-button" data-url="http://humanorcat.com" data-counturl="http://humanorcat.com"></a>');
+    twttr.widgets.load();
   });
 
+  // $("#twit").attr('href', "https://twitter.com/intent/tweet?text=I%20scored%20" + score + "%20on");
+  
+  
   $("#result").html(message);
   $("#again").show();
 };
