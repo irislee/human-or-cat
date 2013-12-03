@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 development:
   adapter: postgresql
-  database: hor_development
+  database: hoc_development
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -13,10 +13,10 @@ development:
 # Do not set this db to the same as development or production.
 test:
   adapter: postgresql
-  database: hor_test
+  database: hoc_test
   host: localhost
 
 production:
   adapter: postgresql
-  database: hor
+  database: hoc
   host: localhost

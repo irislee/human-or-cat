@@ -1,16 +1,24 @@
-<h1>Human or Cat?</h1>
+<div>
 
-<audio controls>
-  <source src="<%= asset_path @sound.file_name %>" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio><br>
+  <h1>Human or Cat?</h1>
+  <p>Play the sound and click the meower.</p>
+<div class="score">Your Score: <span id="score"><%= @score %></span></div><br>
 
-<%= hidden_field_tag 'sound_type', @sound.sound_type %>
-<%= image_tag @image1.file_name, width: '200', class: 'js-img', id: 'human' %>
-<%= image_tag @image2.file_name, width: '200', class: 'js-img', id: 'cat' %>
+<span id="result"></span>
+<a href="/" id="again" style="display:none">Play Again?</a>
+<br>
+<br>
 
-<div id="result"></div>
+<div>
+  <audio controls>
+    <source src="<%= asset_path @sound.file_name %>" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <%= hidden_field_tag 'sound_type', @sound.sound_type %>
+</div>
 
-<a href="/" id="again" style="display:none">Play Again</a>
-
-<div>Score: <span id="score"><%= @score %></span></div>
+  <div class="pic">
+    <%= image_tag @image1.file_name, class: 'js-img', id: 'human' %>
+    <%= image_tag @image2.file_name, class: 'js-img', id: 'cat' %>
+  </div>
+</div>

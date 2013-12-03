@@ -12,11 +12,11 @@ scorer = function(element){
 
 show_results = function(won){
   if (won){
-   var message = "Right"; 
+   var message = "You got it right!"; 
    var condition = "right";
   }
   else {
-    var message = "Wrong";
+    var message = "You got it wrong.";
     var condition = "wrong";
   }
 
