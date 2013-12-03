@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Meow.destroy_all
+Image.destroy_all
+
 Meow.create(file_name: 'meow1.mp3', cat: true)
 Meow.create(file_name: 'meow2.mp3', cat: true)
 Meow.create(file_name: 'meow3.mp3', cat: false)
