@@ -50,17 +50,17 @@ ready = function() {
 
     $(".pic_container").hover(function(){
 
-      var min = 0, max = 255,
+      var min = 100, max = 255,
       r = parseInt(Math.random() * (max - min) + min),
       g = parseInt(Math.random() * (max - min) + min),
       b = parseInt(Math.random() * (max - min) + min),
       color = 'rgb('+r+', '+g+', '+b+')';
       $(this).find(".underlay").animate({'background-color':color},100);
 
-      $(this).find("img").fadeTo(500, .25);
+      $(this).find("img").fadeTo(250, .25);
 
     }, function(){
-      $(this).find("img").fadeTo(500, 1);
+      $(this).find("img").fadeTo(250, 1);
     });
 
   });
