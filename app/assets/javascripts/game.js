@@ -49,7 +49,16 @@ ready = function() {
     $pic_container.eq(1).find(".underlay").css("bottom", height2+5);
 
     $(".pic_container").hover(function(){
+
+      var min = 0, max = 255,
+      r = parseInt(Math.random() * (max - min) + min),
+      g = parseInt(Math.random() * (max - min) + min),
+      b = parseInt(Math.random() * (max - min) + min),
+      color = 'rgb('+r+', '+g+', '+b+')';
+      $(this).find(".underlay").animate({'background-color':color},100);
+
       $(this).find("img").fadeTo(500, .25);
+
     }, function(){
       $(this).find("img").fadeTo(500, 1);
     });
