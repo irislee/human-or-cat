@@ -2,32 +2,34 @@
 
   <h1>Human or Cat?</h1>
   <p>Play the sound and click the meower.</p>
-<div class="score">Your Score: <span id="score"><%= @score %></span></div><br>
+  <div class="score">Your Score: <span id="score"><%= @score %></span></div><br>
 
-<span id="result"></span>
-<a href="/" id="again" style="display:none">Play Again?</a>
-<br>
-<br>
+  <span id="result"></span>
+  <a href="/" id="again" style="display:none">Play Again?</a>
+  <br>
+  <br>
 
-<div>
-  <audio controls>
-    <source src="<%= asset_path @sound.file_name %>" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-  <%= hidden_field_tag 'sound_type', @sound.sound_type %>
-</div>
+  <div>
+    <audio controls>
+      <source src="<%= asset_path @sound.file_name %>" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <%= hidden_field_tag 'sound_type', @sound.sound_type %>
+  </div>
 
   <div class="pic">
     <%= image_tag @image1.file_name, class: 'js-img', id: 'human' %>
     <%= image_tag @image2.file_name, class: 'js-img', id: 'cat' %>
   </div>
+
 </div>
 
 <div>
 <a href="https://twitter.com/intent/tweet?text=I%20scored%20<%= @score %>%20on" data-hashtags="HumanOrCat" data-lang="en" class="twitter-share-button" data-url="http://humanorcat.com" data-counturl="http://humanorcat.com"></a>
 </div>
 
-<div class="fb-share-button" data-href="http://www.humanorcat.com/" data-type="button_count" data="hello"></div>
+<div class="fb-share-button" data-href="http://www.humanorcat.com/" data-type="button_count"></div>
+
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
