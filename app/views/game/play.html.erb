@@ -18,17 +18,25 @@
   </div>
 
   <div class="pic">
-    <%= image_tag @image1.file_name, class: 'js-img', id: 'human' %>
-    <%= image_tag @image2.file_name, class: 'js-img', id: 'cat' %>
+    <div class="pic_container">
+      <%= image_tag @image1.file_name, class: 'js-img', id: 'human' %>
+      <div class="underlay"></div>
+    </div>
+    <div class="pic_container">
+      <%= image_tag @image2.file_name, class: 'js-img', id: 'cat' %>
+      <div class="underlay"></div>
+    </div>
   </div>
 
 </div>
 
-<div id="twit">
-  <a href="https://twitter.com/intent/tweet?text=I%20scored%20<%= @score %>%20on" data-hashtags="HumanOrCat" data-lang="en" class="twitter-share-button" data-url="http://humanorcat.com" data-counturl="http://humanorcat.com"></a>
-</div>
+<div class= "social">
+  <div id="twit">
+    <a href="https://twitter.com/intent/tweet?text=I%20scored%20<%= @score %>%20on" data-hashtags="HumanOrCat" data-lang="en" class="twitter-share-button" data-url="http://humanorcat.com" data-counturl="http://humanorcat.com" data-count="none"></a>
+  </div>
 
-<div class="fb-share-button" data-href="http://www.humanorcat.com/" data-type="button_count"></div>
+  <div id="fbook" class="fb-share-button" data-href="http://www.humanorcat.com/" data-type="button"></div>
+</div>
 
 
 <div id="fb-root"></div>

@@ -25,10 +25,7 @@ show_results = function(won){
     $("#score").html(score);
     $("#twit").html('<a href="https://twitter.com/intent/tweet?text=I%20scored%20' + score + '%20on" data-hashtags="HumanOrCat" data-lang="en" class="twitter-share-button" data-url="http://humanorcat.com" data-counturl="http://humanorcat.com"></a>');
     twttr.widgets.load();
-  });
-
-  // $("#twit").attr('href', "https://twitter.com/intent/tweet?text=I%20scored%20" + score + "%20on");
-  
+  });  
   
   $("#result").html(message);
   $("#again").show();
@@ -38,8 +35,27 @@ ready = function() {
   $( ".js-img" ).on("click", function(){
     scorer(this);
   });
-};
 
+  $(".pic_container img").on('load', function() {
+
+    var $pic_container = $(".pic_container");
+    var height1 = $pic_container.eq(0).find("img").height();
+    var height2 = $pic_container.eq(1).find("img").height();
+    $pic_container.eq(0).height(height1);
+    $pic_container.eq(1).height(height2);
+    $pic_container.eq(0).find(".underlay").height(height1);
+    $pic_container.eq(1).find(".underlay").height(height2);
+    $pic_container.eq(0).find(".underlay").css("bottom", height1+5);
+    $pic_container.eq(1).find(".underlay").css("bottom", height2+5);
+
+    $(".pic_container").hover(function(){
+      $(this).find("img").fadeTo(500, .25);
+    }, function(){
+      $(this).find("img").fadeTo(500, 1);
+    });
+
+  });
+}
 // document ready call the ready function
 $(document).ready(ready);
 // this is a dumb thing like document ready when you have turbolinks
