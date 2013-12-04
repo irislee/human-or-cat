@@ -1,13 +1,22 @@
 <div>
 
   <h1>Human or Cat?</h1>
-  <p>Play the sound and click the meower.</p>
   <div class="score">Your Score: <span id="score"><%= @score %></span></div><br>
 
   <span id="result"></span>
   <a href="/" id="again" style="display:none">Play Again?</a>
   <br>
   <br>
+
+    <div>
+      <div class="container">
+        <div id="hugh">
+          <%= image_tag('hugh.jpg',{:width => '150px'}) %>
+         </div> 
+          <%= image_tag 'bubble.png', {:width => '200px', :id => 'image'} %>
+          <div id="text"><p style="font-weight: bold">Hugh Manorcat sez:</p> It looks like you're trying to decide if this is a human or a cat. I can help! Click the play button then click a human or a cat.</div>
+      </div>
+    </div>
 
   <div>
     <audio controls>
@@ -26,10 +35,6 @@
       <%= image_tag @image2.file_name, class: 'js-img', id: 'cat' %>
       <div class="underlay"></div>
     </div>
-  </div>
-
-  <div id="hugh">
-    <%= image_tag('hugh.jpg',{:width => '150px'}) %>
   </div>
 
 </div>

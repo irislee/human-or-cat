@@ -59,7 +59,35 @@ body{
 }
 
 #hugh {
+
   position: absolute;
-  left: 10px;
-  bottom: 10px;
+  left: 0px;
+  bottom: 0px;
+}
+
+.container
+{
+    height:400px;
+    width:400px;
+    position:absolute;
+    display: inline;
+    bottom:0px;
+    left:0px;
+}
+
+#image
+{    
+    position:absolute;
+    left:10px;
+    top:30px;
+}
+#text
+{
+    z-index:100;
+    position:absolute;    
+    color:black;
+    width:180px;
+    font-size:14px;
+    left:15px;
+    top:35px;
 }
