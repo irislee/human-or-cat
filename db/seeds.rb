@@ -36,6 +36,7 @@ Meow.create(file_name: 'meow24.mp3', cat: true)
 # Meow.create(file_name: 'meow25.mp3', cat: true)
 Meow.create(file_name: 'meow26.mp3', cat: true)
 Meow.create(file_name: 'meow27.mp3', cat: true)
+Meow.create(file_name: 'human_or_cat.mp3', cat: false)
 
 Image.create(file_name: 'cat1.jpg', cat: true)
 Image.create(file_name: 'cat2.jpg', cat: true)
