@@ -18,8 +18,9 @@
       </div>
     </div>
 
-<div>
+<div class="play_button">
   <a onclick="this.firstChild.play()"><audio src="<%= asset_path @sound.file_name %>" type="audio/mpeg"></audio><%= image_tag 'play-button.png', width: '50px' %></a>
+  <div class="underlay"></div>
 </div>
 
 <!--   <div>

@@ -36,6 +36,17 @@ ready = function() {
     scorer(this);
   });
 
+  $(".play_button").hover(function(){
+
+    color = '#D8D8D8';
+    $(this).find(".underlay").animate({'background-color':'#D8D8D8'},100);
+
+    $(this).find("img").fadeTo(5, .25);
+
+  }, function(){
+    $(this).find("img").fadeTo(5, 1);
+  });
+
   $(".pic_container img").on('load', function() {
 
     var $pic_container = $(".pic_container");
