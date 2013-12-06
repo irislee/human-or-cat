@@ -11,8 +11,8 @@ class GameController < ApplicationController
     session[:correct_answers] += 1 if result == "right"
     new_game
     render json: {:games_played => session[:games_played], :correct_answers => session[:correct_answers],
-                  :human_image => @image1.file_name, :cat_image => @image2.file_name,
-                  :sound_file => @sound.file_name, :cat_sound => @sound.sound_type}
+                  :human_image => ActionController::Base.helpers.asset_path(@image1.file_name), :cat_image => ActionController::Base.helpers.asset_path(@image2.file_name),
+                  :sound_file => ActionController::Base.helpers.asset_path(@sound.file_name), :cat_sound => @sound.sound_type}
   end
 
   private

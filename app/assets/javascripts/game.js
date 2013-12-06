@@ -36,8 +36,8 @@ loadElements = function(data) {
   var score = data.correct_answers + "/" + data.games_played;
   $("#score").html(score);
   $("#twit").html('<a href="https://twitter.com/intent/tweet?text=I%20scored%20' + score + '%20on" data-hashtags="HumanOrCat" data-lang="en" class="twitter-share-button" url="http://humanorcat.com" data-count="none"></a>');
-  $("#human").attr('src', '/assets/' + data.human_image);
-  $("#cat").attr('src', '/assets/' + data.cat_image);
+  $("#human").attr('src', data.human_image);
+  $("#cat").attr('src', data.cat_image);
   $("#audio-source").attr('src', '/assets/' + data.sound_file);
   $("#sound_type").attr('value', data.cat_sound);
 };
