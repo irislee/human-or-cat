@@ -17,7 +17,6 @@ body{
 }
 
 .pic{
-  vertical-align: middle;
   display: inline-block;
   position: right;
 }
@@ -61,6 +60,7 @@ body{
 #hugh {
 
   position: absolute;
+  display: block;
   left: 0px;
   bottom: 0px;
 }

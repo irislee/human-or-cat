@@ -1,48 +1,44 @@
-<div>
+<div class='container_12'>
 
-  <h1>Human or Cat?</h1>
-  <div class="score">Your Score: <span id="score"><%= @score %></span></div><br>
+  <div class='grid_12'>
+    <h1>Human or Cat?</h1>
+    <div class="score">Your Score: <span id="score"><%= @score %></span></div><br>
 
-  <span id="result"></span>
-  <a href="/" id="again" style="display:none">Play Again?</a>
-  <br>
-  <br>
+    <span id="result"></span>
+    <a href="/" id="again" style="display:none">Play Again?</a>
+    <br>
+    <br>
 
-    <div>
-      <div class="container">
-        <div id="hugh">
-          <%= image_tag('hugh.jpg',{:width => '150px'}) %>
-         </div> 
-          <%= image_tag 'bubble.png', {:width => '200px', :id => 'image'} %>
-          <div id="text"><p style="font-weight: bold">Hugh Manorcat sez:</p> It looks like you're trying to decide if this is a human or a cat. I can help! Click the play button then click a human or a cat.</div>
+    <div class="play_button">
+      <a onclick="this.firstChild.play()"><audio src="<%= asset_path @sound.file_name %>" type="audio/mpeg"></audio><%= image_tag 'play-button.png', width: '50px' %></a>
+      <div class="underlay"></div>
+    </div>
+  </div> <!-- close grid_12 -->  
+
+  <div class='grid_12'>
+    <div class="pic">
+      <div class="pic_container">
+        <%= image_tag @image1.file_name, class: 'js-img', id: 'human' %>
+        <div class="underlay"></div>
       </div>
-    </div>
+      <div class="pic_container">
+        <%= image_tag @image2.file_name, class: 'js-img', id: 'cat' %>
+        <div class="underlay"></div>
+      </div>
+    </div> <!-- close pic -->
+  </div><!-- close grid_12 -->
 
-<div class="play_button">
-  <a onclick="this.firstChild.play()"><audio src="<%= asset_path @sound.file_name %>" type="audio/mpeg"></audio><%= image_tag 'play-button.png', width: '50px' %></a>
-  <div class="underlay"></div>
-</div>
+  <div class='grid_5'>
+    <div class="container">
+      <div id="hugh">
+        <%= image_tag('hugh.jpg',{:width => '150px'}) %>
+       </div> 
+        <%= image_tag 'bubble.png', {:width => '200px', :id => 'image'} %>
+        <div id="text"><p style="font-weight: bold">Hugh Manorcat sez:</p> It looks like you're trying to decide if this is a human or a cat. I can help! Click the play button then click a human or a cat.</div>
+    </div><!-- close container -->
+  </div><!-- close for hugh -->
 
-<!--   <div>
-    <audio controls>
-      <source src="<%#= asset_path @sound.file_name %>" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-    <%#= hidden_field_tag 'sound_type', @sound.sound_type %>
-  </div> -->
-
-  <div class="pic">
-    <div class="pic_container">
-      <%= image_tag @image1.file_name, class: 'js-img', id: 'human' %>
-      <div class="underlay"></div>
-    </div>
-    <div class="pic_container">
-      <%= image_tag @image2.file_name, class: 'js-img', id: 'cat' %>
-      <div class="underlay"></div>
-    </div>
-  </div>
-
-</div>
+</div><!--  close container_12 -->    
 
 <div class="social">
   <div id="fbook" class="fb-share-button" data-href="http://www.humanorcat.com/" data-type="button"></div>
@@ -53,7 +49,7 @@
 </div>
 
 <div class="created_by">
-  <p>Created By Iris Lee<%= link_to image_tag('twitter.png'), 'https://twitter.com/iris_lee' %><%= link_to image_tag('github.png'), 'https://github.com/irislee/human-or-cat' %></p>
+  <p>Created By Iris Lee <%= link_to image_tag('twitter.png'), 'https://twitter.com/iris_lee' %><%= link_to image_tag('github.png'), 'https://github.com/irislee/human-or-cat' %></p>
 </div>
 
 
