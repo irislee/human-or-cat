@@ -1,5 +1,5 @@
 scorer = function(element){
-  $( ".js-img" ).off("click");
+  $(".js-img" ).off("click");
   var hidden_field = $("#sound_type").attr("value");
   var guess = $(element).attr("id");
   if (hidden_field === guess){
@@ -22,29 +22,33 @@ show_results = function(won){
 
   $.get( "score/" + condition, function( data ) {
     console.log(data);
-    var score = data.correct_answers + "/" + data.games_played;
-    $("#score").html(score);
-    $("#twit").html('<a href="https://twitter.com/intent/tweet?text=I%20scored%20' + score + '%20on" data-hashtags="HumanOrCat" data-lang="en" class="twitter-share-button" url="http://humanorcat.com" data-count="none"></a>');
-    $("#human").attr('src', '/assets/' + data.human_image);
-    $("#cat").attr('src', '/assets/' + data.cat_image);
-    //load the sound
-    $("#sound_type").attr('value', data.cat_sound);
+    bindPictureHoverEffect();
+    loadElements(data);
     twttr.widgets.load();
+    bindImageClick();
   });
 
-  $("#result").html(message);
-  $("#again").show();
+  $("#result").html(message + " Try it again!");
+  //$("#again").show();
+};
+
+loadElements = function(data) {
+  var score = data.correct_answers + "/" + data.games_played;
+  $("#score").html(score);
+  $("#twit").html('<a href="https://twitter.com/intent/tweet?text=I%20scored%20' + score + '%20on" data-hashtags="HumanOrCat" data-lang="en" class="twitter-share-button" url="http://humanorcat.com" data-count="none"></a>');
+  $("#human").attr('src', '/assets/' + data.human_image);
+  $("#cat").attr('src', '/assets/' + data.cat_image);
+  $("#audio-source").attr('src', '/assets/' + data.sound_file);
+  $("#sound_type").attr('value', data.cat_sound);
 };
 
 bindImageClick = function() {
   $( ".js-img" ).on("click", function(){
     scorer(this);
   });
-}
+};
 
-ready = function() {
-  bindImageClick();
-
+bindPlayHover = function() {
   $(".play_button").hover(function(){
 
     color = '#D8D8D8';
@@ -55,6 +59,11 @@ ready = function() {
   }, function(){
     $(this).find("img").fadeTo(5, 1);
   });
+};
+
+bindPictureHoverEffect = function() {
+  $(".pic_container img").off();
+  $(".pic_container").off();
 
   $(".pic_container img").on('load', function() {
 
@@ -84,7 +93,14 @@ ready = function() {
     });
 
   });
-}
+};
+
+ready = function() {
+  bindPictureHoverEffect();
+  bindImageClick();
+  bindPlayHover();
+};
+
 // document ready call the ready function
 $(document).ready(ready);
 // this is a dumb thing like document ready when you have turbolinks
