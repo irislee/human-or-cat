@@ -12,29 +12,38 @@ scorer = function(element){
 
 show_results = function(won){
   if (won){
-   var message = "You got it right!"; 
+   var message = "You got it right!";
    var condition = "right";
   }
   else {
     var message = "You got it wrong.";
     var condition = "wrong";
   }
-  
+
   $.get( "score/" + condition, function( data ) {
+    console.log(data);
     var score = data.correct_answers + "/" + data.games_played;
     $("#score").html(score);
     $("#twit").html('<a href="https://twitter.com/intent/tweet?text=I%20scored%20' + score + '%20on" data-hashtags="HumanOrCat" data-lang="en" class="twitter-share-button" url="http://humanorcat.com" data-count="none"></a>');
+    $("#human").attr('src', '/assets/' + data.human_image);
+    $("#cat").attr('src', '/assets/' + data.cat_image);
+    //load the sound
+    $("#sound_type").attr('value', data.cat_sound);
     twttr.widgets.load();
-  });  
-  
+  });
+
   $("#result").html(message);
   $("#again").show();
 };
 
-ready = function() {
+bindImageClick = function() {
   $( ".js-img" ).on("click", function(){
     scorer(this);
   });
+}
+
+ready = function() {
+  bindImageClick();
 
   $(".play_button").hover(function(){
 
