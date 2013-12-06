@@ -18,13 +18,17 @@
       </div>
     </div>
 
-  <div>
+<div>
+  <a onclick="this.firstChild.play()"><audio src="<%= asset_path @sound.file_name %>" type="audio/mpeg"></audio><%= image_tag 'play-button.png', width: '50px' %></a>
+</div>
+
+<!--   <div>
     <audio controls>
-      <source src="<%= asset_path @sound.file_name %>" type="audio/mpeg">
+      <source src="<%#= asset_path @sound.file_name %>" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
-    <%= hidden_field_tag 'sound_type', @sound.sound_type %>
-  </div>
+    <%#= hidden_field_tag 'sound_type', @sound.sound_type %>
+  </div> -->
 
   <div class="pic">
     <div class="pic_container">
