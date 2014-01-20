@@ -18,8 +18,8 @@ body{
 }
 
 .pic{
-  display: inline-block;
-  position: right;
+  padding-left: 110px;
+  padding-right: 110px;
 }
 
 #again{
@@ -58,22 +58,23 @@ body{
   vertical-align: top;
 }
 
+.stay {
+  position: relative;
+}
+
 #hugh {
 
   position: absolute;
   display: block;
   left: 0px;
   bottom: 0px;
-}
-
-.container
-{
-    height:400px;
-    width:400px;
-    position:absolute;
-    display: block;
-    bottom:0px;
-    left:0px;
+  height:400px;
+  width:210px;
+  position:absolute;
+  display: block;
+  bottom:0px;
+  left:0px;
+  background: pink;
 }
 
 #image
@@ -82,6 +83,14 @@ body{
     left:10px;
     top:30px;
 }
+
+.cat {
+  top: 250px;
+  position: absolute;
+  left: 0;
+}
+
+
 #text
 {
     z-index:100;

@@ -1,6 +1,6 @@
 <div class='container_12'>
-  <h1>Human or Cat?</h1>
   <div class='grid_12'>
+    <h1>Human or Cat?</h1>
     <div class="score">Your Score: <span id="score"><%= @score %></span></div><br>
     <span id="result"></span>
     <a href="/" id="again" style="display:none">Play Again?</a>
@@ -11,8 +11,10 @@
       <div class="underlay"></div>
     </div>
     <%= hidden_field_tag 'sound_type', @sound.sound_type %>
-  </div> <!-- close grid_12 -->
+  </div>
+</div>
 
+<div class='container_12'>
   <div class='grid_12'>
     <div class="pic">
       <div class="pic_container">
@@ -25,30 +27,36 @@
       </div>
     </div>
   </div>
+</div>
+  
+<div class="stay">
+  <div id="hugh">
+    <%= image_tag('hugh.jpg',{:width => '150px', :class => 'cat'}) %>
+    <%= image_tag 'bubble.png', {:width => '200px', :id => 'image'} %>
+    <div id="text"><p style="font-weight: bold">Hugh Manorcat sez:</p> It looks like you're trying to decide if this is a human or a cat. I can help! Click the play button then click a human or a cat.</div>
+  </div>
+</div>
 
-  <div class="grid_1">
-    <div class="container">
-      <div id="hugh">
-        <%= image_tag('hugh.jpg',{:width => '150px'}) %>
-       </div>
-        <%= image_tag 'bubble.png', {:width => '200px', :id => 'image'} %>
-        <div id="text"><p style="font-weight: bold">Hugh Manorcat sez:</p> It looks like you're trying to decide if this is a human or a cat. I can help! Click the play button then click a human or a cat.</div>
+
+<div class='container_12'>
+  <div class='grid_12'>
+    <div class="social">
+      <div id="fbook" class="fb-share-button" data-href="http://www.humanorcat.com/" data-type="button"></div>
+
+      <div id="twit">
+        <a href="https://twitter.com/intent/tweet?text=I%20scored%20<%= @score %>%20on" data-hashtags="HumanOrCat" data-lang="en" class="twitter-share-button" url="http://humanorcat.com" data-count="none"></a>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="social">
-  <div id="fbook" class="fb-share-button" data-href="http://www.humanorcat.com/" data-type="button"></div>
-
-  <div id="twit">
-    <a href="https://twitter.com/intent/tweet?text=I%20scored%20<%= @score %>%20on" data-hashtags="HumanOrCat" data-lang="en" class="twitter-share-button" url="http://humanorcat.com" data-count="none"></a>
+<div class='container_12'>
+  <div class='grid_12'>
+    <div class="created_by">
+      <p>Created By Iris Lee <%= link_to image_tag('twitter.png'), 'https://twitter.com/iris_lee' %><%= link_to image_tag('github.png'), 'https://github.com/irislee/human-or-cat' %></p>
+    </div>
   </div>
 </div>
-
-<div class="created_by">
-  <p>Created By Iris Lee <%= link_to image_tag('twitter.png'), 'https://twitter.com/iris_lee' %><%= link_to image_tag('github.png'), 'https://github.com/irislee/human-or-cat' %></p>
-</div>
-
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
