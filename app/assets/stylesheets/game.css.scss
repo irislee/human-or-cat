@@ -63,18 +63,11 @@ body{
 }
 
 #hugh {
-
-  position: absolute;
+  position: relative;
   display: block;
-  left: 0px;
-  bottom: 0px;
   height:400px;
   width:210px;
-  position:absolute;
   display: block;
-  bottom:0px;
-  left:0px;
-  background: pink;
 }
 
 #image
@@ -90,6 +83,23 @@ body{
   left: 0;
 }
 
+.bubble {
+  margin: 50px;
+  padding: 10px;
+  position: relative;
+  width: 100px;
+}
+
+.bubble:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 20px;
+  border-top: 20px solid blue;
+  border-top-color: inherit; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent; 
+}
 
 #text
 {
