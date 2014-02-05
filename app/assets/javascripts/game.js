@@ -69,13 +69,13 @@ bindPictureHoverEffect = function() {
 
     var $pic_container = $(".pic_container");
     var height1 = $pic_container.eq(0).find("img").height();
-    var height2 = $pic_container.eq(0).find("img").height();
+    var height2 = $pic_container.eq(1).find("img").height();
     $pic_container.eq(0).height(height1);
-    $pic_container.eq(0).height(height2);
+    $pic_container.eq(1).height(height2);
     $pic_container.eq(0).find(".underlay").height(height1);
-    $pic_container.eq(0).find(".underlay").height(height2);
+    $pic_container.eq(1).find(".underlay").height(height2);
     $pic_container.eq(0).find(".underlay").css("bottom", height1);
-    $pic_container.eq(0).find(".underlay").css("bottom", height2);
+    $pic_container.eq(1).find(".underlay").css("bottom", height2);
 
     $(".pic_container").hover(function(){
 
